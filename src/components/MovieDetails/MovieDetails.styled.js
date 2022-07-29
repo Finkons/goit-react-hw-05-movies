@@ -14,7 +14,6 @@ export const MDContainer = styled.div`
 export const Img = styled.img`
   display: flex;
   align-items: flex-start;
-
   margin: 0 auto;
   padding-bottom: 50px;
 }

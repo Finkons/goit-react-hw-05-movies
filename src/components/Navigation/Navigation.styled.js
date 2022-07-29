@@ -9,8 +9,8 @@ export const Nav = styled.nav`
 export const Link = styled(NavLink)`
   font-size: 22px;
   font-weight: 700;
-  padding-left: 15px;
-  padding-right: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
   &.active {
     color: 'blue';
     border-bottom: 3px solid 'blue';
