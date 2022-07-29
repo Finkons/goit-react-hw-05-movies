@@ -32,7 +32,7 @@ const HomePage = () => {
             onChange={(_, num) => setPage(num)}
             showFirstButton
             showLastButton
-            sx={{ marginY: 3, marginX: 'auto' }}
+            sx={{ marginY: 6, marginX: 'auto' }}
             renderItem={item => (
               <PaginationItem
                 component={NavLink}
