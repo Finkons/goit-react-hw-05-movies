@@ -35,7 +35,7 @@ const MovieDetailsPage = () => {
   return (
     <>
       <Button type="button" onClick={onGoBack}>
-        To Movies
+        Go back
       </Button>
       {!movie && <Loader />}
       {movie && <MovieDetails movie={movie} />}
