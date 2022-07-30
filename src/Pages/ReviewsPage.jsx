@@ -8,16 +8,18 @@ const ReviewsPage = () => {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState(null);
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     getReviews(movieId)
       .then(results => setReviews(results))
-      .catch(error => setError(error.message));
+      .catch(error => setError(error.message))
+      .finally(() => setLoading(false));
   }, [movieId]);
 
   return (
     <>
-      {!reviews && <Loader />}
+      {loading && <Loader />}
       {reviews && <Reviews reviews={reviews} />}
       {error && <p>Something went wrong, please try again later!g</p>}
     </>

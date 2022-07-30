@@ -5,11 +5,9 @@ import Header from 'components/Header';
 import Loader from 'components/Loader/Loader';
 import { Container } from './App.styled';
 
-const HomePage = lazy(() => import('components/Pages/HomePage'));
-const MoviePage = lazy(() => import('components/Pages/MoviePage'));
-const MovieDetailsPage = lazy(() =>
-  import('components/Pages/MovieDetailsPage')
-);
+const HomePage = lazy(() => import('Pages/HomePage'));
+const MoviePage = lazy(() => import('Pages/MoviePage'));
+const MovieDetailsPage = lazy(() => import('Pages/MovieDetailsPage'));
 
 export const App = () => {
   return (

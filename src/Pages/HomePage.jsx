@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Title } from '../MovieList/MovieList.styled';
+import { Title } from '../components/MovieList/MovieList.styled';
 import { getTrending } from 'API/api-servises';
 import { Link as NavLink } from 'react-router-dom';
 import Loader from 'components/Loader';
@@ -10,18 +10,21 @@ const HomePage = () => {
   const [movies, setMovies] = useState(null);
   const [error, setError] = useState('');
   const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(false);
   const pageQty = 1000;
 
   useEffect(() => {
+    setLoading(true);
     getTrending(page)
       .then(results => setMovies([...results]))
-      .catch(error => setError(error.message));
+      .catch(error => setError(error.message))
+      .finally(() => setLoading(false));
   }, [page]);
 
   return (
     <>
       <Title>Trending Movies</Title>
-      {!movies && <Loader />}
+      {loading && <Loader />}
       {movies && <MovieList movies={movies} page={page} />}
       {error && <p>Something went wrong, please try again later!</p>}
       <Stack spacing={2}>

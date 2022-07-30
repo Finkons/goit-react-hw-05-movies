@@ -7,7 +7,9 @@ import './index.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-  <Router basename="/goit-react-hw-05-movies/">
-    <App />
-  </Router>
+  <React.StrictMode>
+    <Router basename="/goit-react-hw-05-movies/">
+      <App />
+    </Router>
+  </React.StrictMode>
 );
