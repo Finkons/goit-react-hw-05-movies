@@ -11,6 +11,7 @@ const ReviewsPage = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     getReviews(movieId)
       .then(results => setReviews(results))
       .catch(error => setError(error.message))
